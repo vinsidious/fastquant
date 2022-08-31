@@ -143,7 +143,7 @@ def analyze_strategies(
             
         total_won = tradeanalyzer.won.total
         total_lost = tradeanalyzer.lost.total
-        profit_factor = round((total_won / total_lost), 2)
+        profit_factor = round((total_lost and total_won / total_lost or total_won / 1), 2)
 
         if "won" in tradeanalyzer.keys():
             win_rate = tradeanalyzer["won"]["total"] / tradeanalyzer["total"]["total"]
