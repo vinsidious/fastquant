@@ -3,6 +3,7 @@ from fastquant.strategies import (
     RSIStrategy,
     SMACStrategy,
     BaseStrategy,
+    DFMAStrategy,
     MACDStrategy,
     EMACStrategy,
     BBandsStrategy,
@@ -14,6 +15,7 @@ from fastquant.strategies import (
 
 # Register your strategy here
 STRATEGY_MAPPING = {
+    "dfma": DFMAStrategy,
     "rsi": RSIStrategy,
     "smac": SMACStrategy,
     "base": BaseStrategy,

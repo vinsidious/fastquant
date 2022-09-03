@@ -3,6 +3,7 @@
 from fastquant.strategies.base import BaseStrategy
 from fastquant.strategies.bollinger_band import BBandsStrategy
 from fastquant.strategies.buy_and_hold import BuyAndHoldStrategy
+from fastquant.strategies.dfma import DFMAStrategy
 from fastquant.strategies.ma_crossover import SMACStrategy, EMACStrategy
 from fastquant.strategies.macd import MACDStrategy
 from fastquant.strategies.rsi import RSIStrategy
