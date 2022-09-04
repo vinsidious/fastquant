@@ -19,9 +19,14 @@ from fastquant.indicators.custom import CustomIndicator
 
 class CustomStrategy(BaseStrategy):
     """
-    Implements a chosen dataframe column as a custom indicator (column name set as "custom" by default).
+    Implements a chosen dataframe column as a custom indicator (column name set
+    as "custom" by default).
 
-    The strategy is structured similar to RSIStrategy where you can set an upper_limit, above which the asset is sold (considered "overbought"), and a lower_limit, below which the asset is sold (considered "underbought). upper_limit is set to 95 by default, while lower_limit is set to 5 by default.
+    The strategy is structured similar to RSIStrategy where you can set an
+    upper_limit, above which the asset is sold (considered "overbought"), and a
+    lower_limit, below which the asset is bought (considered "underbought).
+    upper_limit is set to 95 by default, while lower_limit is set to 5 by
+    default.
 
     Parameters
     ----------
@@ -30,7 +35,8 @@ class CustomStrategy(BaseStrategy):
     lower_limit : float
         The lower value of the custom indicator above which, the asset is sold
     custom_column : str
-        The name of the column in the dataframe that corresponds to the custom indicator
+        The name of the column in the dataframe that corresponds to the custom
+        indicator
 
     """
 
@@ -71,18 +77,23 @@ class CustomStrategy(BaseStrategy):
 
 class TernaryStrategy(BaseStrategy):
     """
-    Implements a chosen dataframe column as a custom "buy" (1), "sell" (-1), and "neutral" (0).
+    Implements a chosen dataframe column as a custom "buy" (1), "sell" (-1), and
+    "neutral" (0).
 
-    The strategy is to simply buy when the custom indicator is equal to the buy_int (1), sell when equal to the sell_int (-1), and do nothing otherwise (0).
+    The strategy is to simply buy when the custom indicator is equal to the
+    buy_int (1), sell when equal to the sell_int (-1), and do nothing otherwise
+    (0).
 
     Parameters
     ----------
     buy_int : int
         The value of the custom column that indicates a "buy" signal (default=1)
     sell_int : int
-        The value of the custom column that indicates a "sell" signal (default=-1)
+        The value of the custom column that indicates a "sell" signal
+        (default=-1)
     custom_column : str
-        The name of the column in the dataframe that corresponds to the custom ternary indicator
+        The name of the column in the dataframe that corresponds to the custom
+        ternary indicator
 
     """
 

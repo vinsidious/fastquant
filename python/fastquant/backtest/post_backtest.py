@@ -116,6 +116,7 @@ def analyze_strategies(
                 indicator_history_dfs.append(indicators_df)
 
         # We run metrics on the last strat since all the metrics will be the same for all strats
+        pyfolio = strat.analyzers.pyfolio.get_analysis()
         sqn = strat.analyzers.sqn.get_analysis()
         returns = strat.analyzers.returns.get_analysis()
         sharpe = strat.analyzers.mysharpe.get_analysis()
@@ -125,6 +126,7 @@ def analyze_strategies(
 
         # Combine dicts for returns and sharpe
         m = {
+            **pyfolio,
             **sqn,
             **returns,
             **drawdown,
