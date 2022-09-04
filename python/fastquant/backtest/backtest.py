@@ -186,7 +186,6 @@ def backtest(
         strat_names.append(strat_name)
 
     # Apply Total, Average, Compound and Annualized Returns calculated using a logarithmic approach
-    cerebro.addanalyzer(btanalyzers.PyFolio, _name="pyfolio")
     cerebro.addanalyzer(btanalyzers.SQN, _name="sqn")
     cerebro.addanalyzer(btanalyzers.Returns, _name="returns")
     cerebro.addanalyzer(btanalyzers.SharpeRatio, _name="mysharpe")

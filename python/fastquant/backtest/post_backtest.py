@@ -126,7 +126,6 @@ def analyze_strategies(
 
         # Combine dicts for returns and sharpe
         m = {
-            **pyfolio,
             **sqn,
             **returns,
             **drawdown,
@@ -140,10 +139,6 @@ def analyze_strategies(
             total = tradeanalyzer["total"]["total"]
         else:
             total = np.nan
-            
-        total_won = tradeanalyzer.won.total
-        total_lost = tradeanalyzer.lost.total
-        profit_factor = round((total_lost and total_won / total_lost or total_won / 1), 2)
 
         if "won" in tradeanalyzer.keys():
             win_rate = tradeanalyzer["won"]["total"] / tradeanalyzer["total"]["total"]
@@ -174,9 +169,6 @@ def analyze_strategies(
             lost_max_prcnt = np.nan
 
         m2 = {
-            "total_won": total_won,
-            "total_lost": total_lost,
-            "profit_factor": profit_factor,
             "total": total,
             "win_rate": win_rate,
             "won": won,
